@@ -91,6 +91,14 @@ hr.rule{border:0;border-top:2px solid var(--rule);margin:40px 0}
 .board{margin:0}
 .board img{width:100%;height:auto}
 @media (max-width:760px){.talk{grid-template-columns:1fr;gap:20px}}
+.contact-intro{font-size:18px;margin:28px 0 40px}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+.map{aspect-ratio:835/515;background:var(--ph)}
+.map iframe{display:block;width:100%;height:100%;border:0;filter:grayscale(.85) contrast(.95) brightness(1.03)}
+.contact-card{border-top:2px solid var(--rule);border-bottom:2px solid var(--rule);padding:30px 0 40px;font-size:18px}
+.contact-card h2{margin:0 0 18px;font-size:36px;color:var(--title)}
+.contact-card p:last-child{margin-bottom:0}
+@media (max-width:760px){.contact-grid{grid-template-columns:1fr;gap:32px}}
 footer .wrap{padding-top:26px;padding-bottom:26px;font-size:13px;color:var(--muted);text-align:center}
 </style>
 </head>
@@ -282,12 +290,11 @@ footer .wrap{padding-top:26px;padding-bottom:26px;font-size:13px;color:var(--mut
 
 <!-- CONTACT -->
 <section class="view" id="v-contact">
-  <div class="split">
-    <div>
-      <p style="margin-top:28px">The group is located at <a href="https://gulbenkian.pt/ciencia/">Gulbenkian Institute</a> in the small town of Oeiras, 15 minutes by tram from downtown Lisbon. The setting is ideal from the scientific point of view, as it allows for many interactions with experimental groups. From the non-scientific point of view, we are a 10 minutes walk from the beach.</p>
-    </div>
-    <div>
-      <h3>Contact</h3>
+  <p class="contact-intro">The group is located at <a href="https://gulbenkian.pt/ciencia/">Gulbenkian Institute</a> in the small town of Oeiras, 15 minutes by tram from downtown Lisbon. The setting is ideal from the scientific point of view, as it allows for many interactions with experimental groups. From the non-scientific point of view, we are a 10 minutes walk from the beach.</p>
+  <div class="contact-grid">
+    <div class="map"><iframe title="Map showing the Gulbenkian Institute of Molecular Medicine in Oeiras" src="https://maps.google.com/maps?q=Gulbenkian%20Institute%20of%20Molecular%20Medicine%2C%20Rua%20da%20Quinta%20Grande%206%2C%202780-156%20Oeiras%2C%20Portugal&amp;z=12&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div>
+    <div class="contact-card">
+      <h2>Contact</h2>
       <p>Gulbenkian Institute of Molecular Medicine (GIMM)<br>Rua da Quinta Grande 6<br>2780-156 Oeiras<br>Portugal</p>
       <p><strong>E:</strong> pablo.sartori (at) gimm.pt</p>
       <p>No twitter!</p>
