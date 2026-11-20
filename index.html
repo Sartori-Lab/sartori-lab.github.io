@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sartori Group</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+<style>:root{
+  --bg:#eff3f4; --text:#3b4040; --strong:#2c3131; --muted:#6b7272; --rule:#ffffff;
+  --link:#3b4040; --ph:#e2e8ea; --ph-text:#7d8789; --frame:#1f2323; --drop:#ffffff;
+  --sans:"Source Sans 3","Source Sans Pro","Helvetica Neue",Arial,sans-serif;
+  --display:"Barlow Condensed","DIN Condensed","Arial Narrow",sans-serif;
+  color-scheme:light; box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);font-weight:300;font-size:17px;line-height:1.35}
+a{color:var(--link);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:2px}
+a:hover{opacity:.7}
+a:focus-visible,button:focus-visible{outline:2px solid var(--strong);outline-offset:3px}
+img{max-width:100%;display:block}
+b,strong{font-weight:600;color:var(--strong)}
+.wrap{max-width:1100px;margin:0 auto;padding-left:24px;padding-right:24px}
+header .wrap{display:flex;justify-content:space-between;align-items:flex-start;gap:24px;padding-top:24px}
+header .wrap::after{content:none}
+header{margin-bottom:0}
+.hdr-rule{max-width:1052px;margin:0 auto;border-top:2px solid var(--rule)}
+.site-title{margin:0;white-space:nowrap;flex-shrink:0;font-family:var(--display);font-weight:600;font-size:42px;line-height:1;letter-spacing:.01em;text-transform:uppercase;color:var(--strong)}
+.site-title a{color:inherit;text-decoration:none}
+.site-title a:hover{opacity:1}
+nav ul{list-style:none;margin:0;padding:6px 0 0;display:flex;flex-wrap:wrap;justify-content:flex-end;gap:6px 28px}
+nav li{position:relative;margin:0}
+nav a,nav button{font-family:var(--sans);font-weight:400;font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--text);background:none;border:0;border-bottom:2px solid transparent;padding:4px 0 10px;cursor:pointer;text-decoration:none;line-height:1.35;display:inline-block;vertical-align:top}
+nav a:hover,nav button:hover{opacity:1;border-bottom-color:var(--rule)}
+nav a.active,nav button.active{border-bottom-color:var(--rule)}
+.dropdown{display:none;position:absolute;left:-14px;top:100%;background:var(--drop);padding:10px 0;min-width:170px;z-index:20;box-shadow:0 2px 8px rgba(0,0,0,.08)}
+.dropdown a{display:block;padding:6px 14px;border:0}
+li.open .dropdown{display:block}
+@media (hover:hover){li.has-drop:hover .dropdown{display:block}}
+@media (max-width:820px){
+  header .wrap{flex-direction:column;align-items:center}
+  nav ul{justify-content:center;gap:4px 20px}
+  .site-title{font-size:36px}
+}
+main.wrap{padding-top:44px;padding-bottom:90px;border-top:2px solid var(--rule);max-width:1052px;padding-left:0;padding-right:0;margin-top:40px}
+@media (max-width:1100px){main.wrap{margin-left:24px;margin-right:24px}}
+.view{display:none}.view.shown{display:block}
+h1{font-family:var(--sans);font-weight:300;font-size:52px;line-height:1.15;margin:40px 0 22px;color:var(--text)}
+h1.page-title{font-size:36px;margin:30px 0 12px}
+h2{font-family:var(--sans);font-weight:300;font-size:34px;margin:40px 0 16px}
+h3{font-family:var(--sans);font-weight:600;font-size:18px;margin:0 0 14px;color:var(--strong)}
+p{margin:0 0 1em}
+ul{padding-left:42px}
+li{margin-bottom:6px}
+hr.rule{border:0;border-top:2px solid var(--rule);margin:40px 0}
+.banner{margin:30px 0 10px}
+.banner img{width:100%;height:auto}
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:8px}
+.tile{display:block;text-align:center;text-decoration:none;color:var(--text)}
+.tile img{width:100%;aspect-ratio:1/1;object-fit:cover;border:2px solid var(--frame)}
+.tile span{display:block;margin-top:10px;font-size:15px}
+.tile:hover{opacity:.85}
+@media (max-width:640px){.tiles{grid-template-columns:1fr;max-width:360px;margin:0 auto}h1{font-size:40px}}
+.split{display:grid;grid-template-columns:1.4fr 1fr;gap:36px;align-items:start}
+@media (max-width:760px){.split{grid-template-columns:1fr}}
+.related{font-size:16px}
+.related b{display:block;margin-bottom:4px}
+.ph{background:var(--ph);color:var(--ph-text);font-size:13px;display:flex;align-items:center;justify-content:center;text-align:center;padding:16px;aspect-ratio:4/3}
+.pubs{list-style:none;padding:0;margin:0}
+.pubs li{padding:14px 0;border-bottom:2px solid var(--rule);margin:0}
+.pubs .t{display:block}
+.pubs .a{display:block;color:var(--muted)}
+.pubs .j{display:block;font-weight:600;color:var(--strong)}
+.people{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:30px 24px}
+.person{text-align:center;text-decoration:none;color:var(--text)}
+.avatar{width:140px;height:140px;margin:0 auto 10px;background:var(--ph);display:flex;align-items:center;justify-content:center;font-size:32px;font-weight:300;color:var(--ph-text)}
+.person .role{color:var(--muted)}
+.person .next{font-size:14px;color:var(--muted);margin-top:4px}
+.year{text-align:center;font-weight:600;font-size:34px;color:var(--strong);margin:0}
+.next-speakers{margin-top:10px;margin-bottom:0}
+.talk{display:grid;grid-template-columns:1.5fr 1fr;gap:38px;align-items:start}
+.talk.noimg{grid-template-columns:1fr}
+.talk-text p:last-child{margin-bottom:0}
+.talk-text p:nth-of-type(n+3){text-align:justify}
+.board{margin:0}
+.board img{width:100%;height:auto}
+@media (max-width:760px){.talk{grid-template-columns:1fr;gap:20px}}
+footer .wrap{padding-top:26px;padding-bottom:26px;font-size:13px;color:var(--muted);text-align:center}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <h1 class="site-title"><a href="#home">Sartori Group</a></h1>
+  <nav aria-label="Main">
+    <ul>
+      <li><a href="#chalk" data-v="chalk">ChalkQBio</a></li>
+      <li><a href="#home" data-v="home">Home</a></li>
+      <li class="has-drop"><button type="button" id="resBtn" aria-expanded="false">Research</button>
+        <div class="dropdown">
+          <a href="#assemblies" data-v="assemblies">Assemblies</a>
+          <a href="#evolution" data-v="evolution">Evolution</a>
+          <a href="#energetics" data-v="energetics">Energetics</a>
+        </div>
+      </li>
+      <li><a href="#publications" data-v="publications">Publications</a></li>
+      <li><a href="#people" data-v="people">People</a></li>
+      <li><a href="#join" data-v="join">Join</a></li>
+      <li><a href="#contact" data-v="contact">Contact</a></li>
+    </ul>
+  </nav>
+</div></header>
+<main class="wrap">
+
+<!-- HOME -->
+<section class="view" id="v-home">
+  <div class="banner"><img src="images/banner.jpg" alt="Handwritten equations on a notebook page"></div>
+  <h1>Biology unlike physics</h1>
+  <div class="prose">
+    <p class="lead">Functionality is at the core of our understanding of biological systems. In contrast, inert physical systems lack this sense of function. Accounting for biological function thus requires a new kind of physics. Our group explains biological phenomena by exploring new regimes of <em>statistical physics</em>, <em>mechanics</em> and <em>thermodynamics</em>. Some general questions…</p>
+    <ul>
+      <li>How are functions <em>embedded</em> in biological matter? For instance, how do proteins find correct partners in the heterogeneous cellular environment?</li>
+      <li>What determines the characteristics that organisms <em>evolve</em>? Why some organisms evolve sensory response, whereas others evolve stochastic response?</li>
+      <li>What are the main <em>constraints</em> to biological functionality? The laws of thermodynamics, the genetic code, the finite size of the proteome?</li>
+    </ul>
+    <p>Below are some examples of our research interests</p>
+  </div>
+  <hr class="rule">
+  <div class="tiles">
+    <a class="tile" href="#assemblies"><img src="images/tile-assemblies.jpg" alt=""><span>Embedding assemblies</span></a>
+    <a class="tile" href="#evolution"><img src="images/tile-evolution.jpg" alt=""><span>Evolving interactions</span></a>
+    <a class="tile" href="#energetics"><img src="images/tile-energetics.jpg" alt=""><span>Energetic constraints</span></a>
+  </div>
+</section>
+
+<!-- ASSEMBLIES -->
+<section class="view" id="v-assemblies">
+  <h1>Embedding function in protein assemblies</h1>
+  <p class="prose">Most cellular functions are carried out by assemblies of multiple proteins referred to as protein complexes. Although we often explain how protein complexes function by analogy with engineered devices, there are fundamental differences. First, unlike man made machines, protein complexes <em>self-assemble</em> from their constituent components. Second, the concerted motion of atoms in an assembly may not be analogous to that of rigid cogs moving relative to each other. Finally, as proteins operate at the thermal energy scale, reliable operation is a challenge.</p>
+  <hr class="rule">
+  <h3>Self-assembly state of matter</h3>
+  <div class="split">
+    <div>
+      <p>One fundamental characteristic of protein complexes is that they self-assemble from their constituent components. Self-assembly of hundreds of different complexes occurs in the cytoplasm, a mixture of thousands of different protein species. This makes accurate assembly a formidable discriminatory task, as each growing complex needs to distinguish its few constituent proteins. <em>What are the states of matter of a mixture of thousands of proteins? Is self-assembly a robust phase? What are the generic properties of assemblies that allow them to self-assemble accurately?</em></p>
+      <div class="related"><b>Related Publications</b><a href="https://www.pnas.org/content/117/1/114">Lessons from equilibrium statistical physics regarding the assembly of protein complexes. P. Sartori and S. Leibler. <strong>Proc. Natl. Acad. Sci., 2020 117 (1)</strong></a></div>
+    </div>
+    <div class="ph">Image: Prot_Ass2.jpg</div>
+  </div>
+  <hr class="rule">
+  <h3>Coarse graining assembly function</h3>
+  <div class="split">
+    <div>
+      <p>The function of an assembly is determined by the motion of its atomic structure. Different molecular forces underlay the motion of the large number of atoms in an assembly (10<sup>5</sup> for the ATP synthase). This makes the dimensionality of assemblies function formidably large. Surprisingly, very simple mechano-chemical descriptions of assemblies, with two or three degrees of freedom, have been greatly succesful in biophysics. <em>How do such simple descriptions emerge from the high dimensional structural description of assemblies? Can we describe protein assemblies as a “special” kind of evolved elastic material?</em></p>
+      <div class="related"><b>Related Publications</b><a href="https://journals.aps.org/prx/abstract/10.1103/PhysRevX.14.011042">Evolutionary conservation of mechanical strain distributions in functional transitions of protein structures. P. Sartori and S. Leibler. <strong>Physical Review X, 2024</strong></a></div>
+    </div>
+    <div class="ph">Image: CellularMachine_Fig1.png</div>
+  </div>
+</section>
+
+<!-- EVOLUTION -->
+<section class="view" id="v-evolution">
+  <h1>Evolving responses and interactions</h1>
+  <p class="prose">Living systems are the constant subject of evolution. Through mutations and selection, organisms adapt to complex environments. As a result, their response to external changes is unlike that of inert materials. For example, cells adjust their behavior and metabolism to the chemical composition of their surroundings. Furthermore, organisms do not evolve in isolation, but rather as part of ecosystems in which multiple species interact. As a consequence, the response of one species can modify the conditions of evolution of another species. This blurs the line between response and environment.</p>
+  <hr class="rule">
+  <h3>Emergence of adaptation strategies</h3>
+  <div class="split">
+    <div>
+      <p>Organisms can evolve different strategies to adapt to environmental changes. Some organisms sense the environment and elicit a specific response. Others, instead, evolve generalist phenotypes that perform well in all environments. <em>What features of organisms are flexible enough to allow for different strategies to emerge? What properties of the environment determine which strategy organisms evolve?</em></p>
+      <div class="related"><b>Related Publications</b><a href="https://www.pnas.org/content/116/28/13847.short">Environment-to-phenotype mapping and adaptation strategies in varying environments. B.K. Xue, P. Sartori and S. Leibler. <strong>Proc. Natl. Acad. Sci., 2019, 116 (28)</strong></a></div>
+    </div>
+    <div class="ph">Image: Fig_Binkan1.jpg</div>
+  </div>
+  <hr class="rule">
+  <h3>Ecosystems as coupled responses</h3>
+  <div class="split">
+    <div>
+      <p>Just as the environment affects how organisms respond, organisms themselves can modify their surroundings. Furthermore, within an ecosystem, each species alters the environment in distinct ways, which may result in self-organization. A prime example of this is observed in soil samples, which allow one to distinguish estratification of different microbial species depending on their metabolism. <em>How does evolution sculpt this coupling among species? What result in the emergence of adaptation strategies at the ecosystem level?</em></p>
+    </div>
+    <div class="ph">Image: Fig_Evolution1.png</div>
+  </div>
+</section>
+
+<!-- ENERGETICS -->
+<section class="view" id="v-energetics">
+  <h1>Thermodynamic constraints in biology</h1>
+  <p class="prose">The function of biological systems can not escape the constraints of its “hardware architecture”. For example, the functions that a cellular network can achieve are constrained by its topology, the biochemical properties of its components, and the laws of thermodynamics. Although we are interested in different types of constraints, thermodynamic constraints have been a recurrent topic in our group.</p>
+  <hr class="rule">
+  <h3>Thermodynamics of development</h3>
+  <div class="split">
+    <div>
+      <p>In order to develop, multicellular organisms extract nutrients from their environment and use them to synthesize cellular components. This assembly process is highly irreversible, and as a consequence part of the energy in the nutrients is wasted as heat. Using isothermal callorimetry this heat can be measured. <em>What biochemical processes are the main contributors to heat dissipation in developing embryos? Is heat generation an important constraint to the developing embryo?</em></p>
+      <div class="related"><b>Related Publications</b><a href="https://www.molbiolcell.org/doi/10.1091/mbc.E19-09-0529">Contribution of increasing plasma membrane to the energetic cost of early zebrafish embryogenesis. J. Rodenfels, P. Sartori, S. Golfier, K. Nagendra, KM. Neugebauer, J. Howard. <strong>Molecular Biology of the Cell 31 (7)</strong></a></div>
+    </div>
+    <div class="ph">Image: Fig_Rodenfels.jpg</div>
+  </div>
+  <hr class="rule">
+  <h3>Copying cellular information</h3>
+  <div class="split">
+    <div>
+      <p>Subcellular systems carry out a variety of information processing tasks, e.g. copying information from sources such as DNA or RNA. Due to the small scale at wich these processes occur, they are subject to thermal fluction and, therefore, they are error-prone. To ensure fidelity, a number of energy-consuming mechanisms have evolved. <em>How do the laws of thermodynamics constrain the information processing capabilities of cellular systems? What is the relationship between the speed of information processing, its accuracy, and the energetic cost associated to it?</em></p>
+      <div class="related"><b>Related Publications</b><a href="https://journals.aps.org/prx/abstract/10.1103/PhysRevX.5.041039">Thermodynamics of error correction. P. Sartori and S. Pigolotti. <strong>Phys. Rev. X, 2015, 5, 041039</strong></a></div>
+    </div>
+    <div class="ph">Image: Figure6.png</div>
+  </div>
+</section>
+
+<!-- PUBLICATIONS -->
+<section class="view" id="v-publications">
+  <h1 class="page-title">Selected Publications</h1>
+  <p class="prose">Below you can find some selected publications. For a complete list of publications you can visit <a href="https://scholar.google.com/citations?hl=en&amp;user=bWdwdRwAAAAJ">Google Scholar</a>.</p>
+  <ul class="pubs">
+    <li><a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.134.038402"><span class="t">High-Speed Combinatorial Polymerization through Kinetic-Trap Encoding</span></a><span class="a">F. Benoist &amp; P. Sartori</span><span class="j">Physical Review Letters, 2025</span></li>
+    <li><a href="https://www.pnas.org/doi/abs/10.1073/pnas.2320504121"><span class="t">Liquid Hopfield model: Retrieval and localization in multicomponent liquid mixtures</span></a><span class="a">R. Braz-Teixeira, G. Carugno, I. Neri &amp; P. Sartori</span><span class="j">Proceedings of the National Academy of Sciences, 2024</span></li>
+    <li><a href="https://journals.aps.org/prx/abstract/10.1103/PhysRevX.14.011042"><span class="t">Evolutionary conservation of mechanical strain distributions in functional transitions of protein structures</span></a><span class="a">P. Sartori &amp; S. Leibler</span><span class="j">Physical Review X, 2024</span></li>
+    <li><a href="https://arxiv.org/abs/2106.00704"><span class="t">Ciliary beating patterns map onto a low-dimensional behavioral space</span></a><span class="a">V. Geyer, J. Howard &amp; P. Sartori</span><span class="j">Nature Physics, 2022, 18, 332–337</span></li>
+    <li><a href="https://www.molbiolcell.org/doi/10.1091/mbc.E19-09-0529"><span class="t">Contribution of increasing plasma membrane to the energetic cost of early zebrafish embryogenesis</span></a><span class="a">J. Rodenfels, P. Sartori, S. Golfier, K. Nagendra, KM. Neugebauer, J. Howard</span><span class="j">Molecular Biology of the Cell, 2020, 31 (7)</span></li>
+    <li><a href="https://www.pnas.org/content/117/1/114"><span class="t">Lessons from equilibrium statistical physics regarding the assembly of protein complexes</span></a><span class="a">P. Sartori and S. Leibler</span><span class="j">Proceedings of the National Academy of Sciences, 2020, 117 (1)</span></li>
+    <li><a href="https://www.pnas.org/content/116/28/13847.short"><span class="t">Environment-to-phenotype mapping and adaptation strategies in varying environments</span></a><span class="a">B.K. Xue, P. Sartori and S. Leibler</span><span class="j">Proceedings of the National Academy of Sciences, 2019, 116 (28)</span></li>
+    <li><a href="https://journals.aps.org/prx/abstract/10.1103/PhysRevX.5.041039"><span class="t">Thermodynamics of error correction</span></a><span class="a">P. Sartori and S. Pigolotti</span><span class="j">Physical Review X, 2015, 5, 041039</span></li>
+    <li><a href="https://www.nature.com/articles/nphys2276"><span class="t">The energy-speed-accuracy trade-off in sensory adaptation</span></a><span class="a">G. Lan*, P. Sartori*, S. Neumann, V. Sourjik and Y. Tu</span><span class="j">Nature Physics, 2012, 8 (5) 422–428</span></li>
+  </ul>
+</section>
+
+<!-- PEOPLE -->
+<section class="view" id="v-people">
+  <h2>Current</h2>
+  <div class="people">
+    <a class="person" href="#cv"><div class="avatar">PS</div><b>Pablo Sartori</b><div class="role">Principal Investigator</div></a>
+    <div class="person"><div class="avatar">AD</div><b>Armand Despons</b><div class="role">Postdoc</div></div>
+    <div class="person"><div class="avatar">DM</div><b>Davide Marcato</b><div class="role">Postdoc</div></div>
+    <div class="person"><div class="avatar">CC</div><b>Camila Costa</b><div class="role">PhD student</div></div>
+    <div class="person"><div class="avatar">YW</div><b>Yue Wang</b><div class="role">PhD student</div></div>
+    <div class="person"><div class="avatar">YB</div><b>Yatharth Bhasin</b><div class="role">PhD student</div></div>
+  </div>
+  <h2>Past</h2>
+  <div class="people">
+    <div class="person"><div class="avatar">CT</div><b>Clara Trujillo</b><div class="role">Summer student</div><div class="next">Next: Data analyst at Biome Makers</div></div>
+    <div class="person"><div class="avatar">RB</div><b>Rodrigo Braz Teixeira</b><div class="role">PhD student</div></div>
+    <div class="person"><div class="avatar">MG</div><b>Manuela Giraud</b><div class="role">Undergraduate intern</div><div class="next">Next: PhD student at EMBL Barcelona</div></div>
+    <div class="person"><div class="avatar">VM</div><b>Victo de Mello</b><div class="role">PhD student</div><div class="next">Next: Post-doc at MPI-TM (Sourjik group)</div></div>
+    <div class="person"><div class="avatar">TC</div><b>Tommaso Cossetto</b><div class="role">Post-doc</div><div class="next">Next: Post-doc at U. Lux (Esposito group)</div></div>
+    <div class="person"><div class="avatar">FB</div><b>Felix Benoist</b><div class="role">Post-doc</div><div class="next">Next: Post-doc at Champalimaud (Machens group)</div></div>
+    <div class="person"><div class="avatar">GG</div><b>Guoran Guan</b><div class="role">Summer student</div><div class="next">Next: Undergraduate at Tsinghua</div></div>
+  </div>
+</section>
+
+<!-- CV -->
+<section class="view" id="v-cv">
+  <div class="split">
+    <div>
+      <h1>Pablo Sartori</h1>
+      <p>I am a theoretical physicist who works at the interface between physics and biology. I am interested in how computational properties are embedded in biological matter, the evolutionary process by which this embedding occurred, and the fundamental constraints to which it is subject. More specifically, I work in bioenergetics at different scales, protein assembly, and evolutionary ecology. More generally, I research aspects of biology that are unlike physics.</p>
+    </div>
+    <div class="ph" style="aspect-ratio:1/1;margin-top:28px">Photo: Pablo Sartori</div>
+  </div>
+  <h3>Short CV</h3>
+  <ul class="pubs">
+    <li><span class="j">2020–present</span>Group Leader, Gulbenkian Science Institute (IGC)</li>
+    <li><span class="j">2016–2020</span>Postdoc, The Rockefeller University. Advisor: S. Leibler</li>
+    <li><span class="j">2015–2016</span>Visiting Researcher, Yale University</li>
+    <li><span class="j">2010–2015</span>PhD Physics, Max Planck Institute PKS. Advisor: F. Jülicher</li>
+    <li><span class="j">2008–2010</span>Visiting Researcher, IBM T. J. Watson Research Center. Advisor: Yuhai Tu</li>
+    <li><span class="j">2002–2008</span>Student of theoretical physics at University of Granada</li>
+  </ul>
+</section>
+
+<!-- JOIN -->
+<section class="view" id="v-join">
+  <h1>We are hiring</h1>
+  <div class="prose">
+    <p>We are currently seeking PhD students (5 years) and post-docs (3 years) that are interested in doing theoretical research at the interface of physics and biology.</p>
+    <p>The ideal candidate will have a strong theoretical physics background. No previous knowledge of biology is required, although an honest willingness to learn is a must. Some of our work is purely theoretical, and some has an experimental component, either through collaboration with experimental groups or analysis of publicly available data. Therefore, candidates must be open-minded about using whatever tools necessary to solve the problem at hand: analytics, numerics, or data analysis.</p>
+    <p>We are located at the Gulbenkian Institute. Being in a great biology institute has clear advantages in terms of collaborations. In addition, our goal is to establish interactions with the local and international physics community through an (already funded) visitors program.</p>
+    <p>If you want to apply, write an email to pablo.sartori (at) gimm.pt. Please include a copy of your CV and the names of three potential referrals.</p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="view" id="v-contact">
+  <div class="split">
+    <div>
+      <p style="margin-top:28px">The group is located at <a href="https://gulbenkian.pt/ciencia/">Gulbenkian Institute</a> in the small town of Oeiras, 15 minutes by tram from downtown Lisbon. The setting is ideal from the scientific point of view, as it allows for many interactions with experimental groups. From the non-scientific point of view, we are a 10 minutes walk from the beach.</p>
+    </div>
+    <div>
+      <h3>Contact</h3>
+      <p>Gulbenkian Institute of Molecular Medicine (GIMM)<br>Rua da Quinta Grande 6<br>2780-156 Oeiras<br>Portugal</p>
+      <p><strong>E:</strong> pablo.sartori (at) gimm.pt</p>
+      <p>No twitter!</p>
+    </div>
+  </div>
+</section>
+
+<!-- CHALK -->
+<section class="view" id="v-chalk">
+  <h1 class="page-title">Chalk talks in quantitative biology</h1>
+  <p>We host monthly external seminars in quantitative biology that are held on the blackboard. The seminars last up to two hours, are typically given by early career independent researchers, and are aimed at a small audience with a physics background. Below is a list with some of the speakers. If you wish to come visit, drop a line! We are always looking for new speakers.</p>
+<hr class="rule"><div class="year">2026</div>
+<p class="next-speakers"><b>Next speakers:</b> Petr Sulc, …</p>
+<hr class="rule"><article class="talk"><div class="talk-text"><h3>Carl Goodrich</h3><p><i>Affiliation:</i> ISTA</p><p><i>Title:</i> The statistical mechanics of stochastic programmable self-assembly</p><p><i>Abstract:</i> Biology assembles sophisticated molecular machines from a limited repertoire of components, often using many copies of the same protein within a single complex. I will discuss how such component reuse can be exploited in programmable self-assembly, where stochastic binding creates competition among many possible structures. For fixed binding rules, equilibrium statistical mechanics imposes constraints on binding energies and chemical potentials that define a high-dimensional convex polyhedral cone. Its faces identify which structures can assemble at high yield, which can coexist, and when unwanted structures are unavoidable, providing an exact and useful framework for inverse design. If time permits, I will also discuss some ideas about how bio-inspired functional behavior can be programmed into self-assembled nanostructures.</p></div><figure class="board"><img src="images/chalk-carl-goodrich.jpg" alt="Blackboard from Carl Goodrich’s chalk talk" loading="lazy"></figure></article>
+<hr class="rule"><article class="talk"><div class="talk-text"><h3>Menachem Stern</h3><p><i>Affiliation:</i> AMOLF</p><p><i>Title:</i> Learning without neurons in physical systems</p><p><i>Abstract:</i> Learning is traditionally studied in biological or computational systems. The power of learning frameworks in solving hard inverse problems provides an appealing case for the development of physical learning in which physical systems adopt desirable properties on their own without computational design. It was recently realized that large classes of physical systems can physically learn through local learning rules, autonomously adapting their parameters in response to observed examples of use. Physical learning machines provide multiple practical advantages over computer designed ones, in particular by not requiring an accurate model of the system, and their ability to autonomously adapt to changing needs over time. As theoretical constructs, physical learning machines afford a novel perspective on how physical constraints modify abstract learning theory. In this seminar, we will explore the core ideas that distinguish physical learning from its more familiar computational counterpart. We will discuss how contrastive learning principles emerge in equilibrium/steady state physical systems and demonstrate some consequences of physical learning on the learning materials themselves. We will also compare contrastive learning with traditional Hebbian-style adaptation, highlighting when and why these approaches align and diverge.</p></div><figure class="board"><img src="images/chalk-menanchen-stern.jpg" alt="Blackboard from Menachem Stern’s chalk talk" loading="lazy"></figure></article>
+<hr class="rule"><article class="talk"><div class="talk-text"><h3>Ricard Alert</h3><p><i>Affiliation:</i> MPI PKS</p><p><i>Title:</i> Collective cell migration as active wetting</p><p><i>Abstract:</i> I will discuss how to understand spreading cell clusters as active liquid droplets that wet a substrate. I will present the active wetting model and discuss its applications to explain (i) embryo implantation, (ii) collective durotaxis — the migration of cell clusters along gradients of substrate stiffness — as the motion of a droplet on a wettability gradient, and (iii) the asymmetric shapes of migrating cell clusters, with different front and back contact angles.</p></div><figure class="board"><img src="images/chalk-ricard-alert.jpg" alt="Blackboard from Ricard Alert’s chalk talk" loading="lazy"></figure></article>
+<hr class="rule"><article class="talk"><div class="talk-text"><h3>Sergei Katsev</h3><p><i>Affiliation:</i> University of Minnesota, Duluth</p><p><i>Title:</i> When can microbial activities in sediments or water columns of lakes be theoretically predicted?</p><p><i>Abstract:</i> The chemistry of natural waters is shaped by a network of biogeochemical reactions that reflect the metabolic activities of functionally distinct microbial populations competing for resources. As metabolic capacities are constrained by the genetically determined cellular machinery, theoretically, for the given pathway and for the local physical and chemical conditions, cell-level kinetics may be predicted from rate-limiting factors. Interactions of multiple microbial populations then might predict the net biogeochemical outcomes, and help understand the shifts in their patterns across environments. Recent efforts suggest that such modeling may indeed be possible, at least in stable systems dominated by a relatively small number of microbial pathways, such as the anoxic strata of meromictic lakes. They may also be useful for exploring experimentally inaccessible systems, such as early oceans. Several knowledge gaps, however, need to be addressed to improve model transferability across a wider range of environments. The talk discusses several conceptual advances and parameter refinements that may improve energetics-based modeling. For example, using the same approach to describe the actively growing populations in surface waters and the less active biomass in the deep subsurface would require a better understanding of the controls on the cellular maintenance rates.</p></div><figure class="board"><img src="images/chalk-segei-katsev.jpg" alt="Blackboard from Sergei Katsev’s chalk talk" loading="lazy"></figure></article>
+<hr class="rule"><article class="talk"><div class="talk-text"><h3>Zak Frentz</h3><p><i>Affiliation:</i> MPI for Biology of Ageing</p><p><i>Title:</i> Thermodynamics of the cell: Exploring membrane transporters as molecular heat pumps</p><p><i>Abstract:</i> Recent observations of subcellular temperature gradients challenge traditional thermodynamic models, which predict negligible temperature variations and dismiss reported gradients as experimental artifacts. As an alternative, we propose a novel mechanism in which membrane transporters function as molecular heat pumps. Our analysis shows that by pumping heat during ligand transport, membrane transporters could maintain temperature gradients without exceeding cellular energy budgets. To rigorously test this hypothesis, we introduce a novel, liposome-based synthetic system designed to isolate individual transporters and precisely measure local temperatures free from cellular confounders.</p></div><figure class="board"><img src="images/chalk-zak-frentz.jpg" alt="Blackboard from Zak Frentz’s chalk talk" loading="lazy"></figure></article>
+<hr class="rule"><article class="talk"><div class="talk-text"><h3>Katja Taute</h3><p><i>Affiliation:</i> University of Leipzig</p><p><i>Title:</i> Bacterial navigation in complex environments</p><p><i>Abstract:</i> Many species of bacteria can swim and navigate relative to external stimuli such as chemicals. Chemotaxis has been studied extensively for the model bacterium E. coli swimming in water. In bulk water, E. coli performs a random walk termed “run-tumble” motility that is biased to lead the bacteria up gradients of favored chemicals. E. coli’s run-tumble chemotaxis forms an iconic paradigm widely assumed to broadly translate to other species. In nature, however, diverse species with different random walk strategies navigate a wide range of environments of different levels of complexity, from the open ocean to soil or the gut.</p><p>I will discuss our efforts to use high-throughput 3D tracking and microfluidics to investigate the diversity of bacterial motility strategies. We aim to determine which random walk strategies are available to which species, how such strategies are altered in complex environments, how chemotaxis is achieved, and which strategies maximize chemotaxis in which environments. I will also discuss the strengths and the limits of the E. coli paradigm.</p></div><figure class="board"><img src="images/chalk-katja-taute.jpg" alt="Blackboard from Katja Taute’s chalk talk" loading="lazy"></figure></article>
+<hr class="rule"><article class="talk"><div class="talk-text"><h3>James Bradley</h3><p><i>Affiliation:</i> Mediterranean Institute of Oceanography in Marseille</p><p><i>Title:</i> Energy limitation, microbial dormancy, and the role of microbes in regulating biogeochemical cycles across Earth systems</p><p><i>Abstract:</i> Microbial life across much of the Earth operates under persistent energy limitation, yet remains central to global biogeochemical cycling. Whether microorganisms grow, sustain cellular integrity, persist in dormant states, or die reflects a fundamental but unresolved constraint on how microbial processes scale to ecosystems. Here, I develop a framework in which microbial metabolic state emerges from the balance between available energy flux (power) and cellular energetic demand. Dormancy is not treated as a passive survival state, but as part of a continuum of metabolic states whose transitions regulate carbon and nutrient fluxes across environments. I illustrate this framework using energy-limited systems including the deep biosphere, polar and glacial environments, and the atmosphere. These systems suggest that low power availability can constrain activity over long timescales, while still permitting maintenance metabolism and rapid reactivation under transient change. These observations challenge the assumption that microbial communities are predominantly active and highlight the need to explicitly represent metabolic state in microbial and biogeochemical models, from the scale of the ecosystem to the Earth system.</p></div><figure class="board"><img src="images/chalk-james-bradley.jpg" alt="Blackboard from James Bradley’s chalk talk" loading="lazy"></figure></article>
+<hr class="rule"><article class="talk"><div class="talk-text"><h3>Demian Levis</h3><p><i>Affiliation:</i> University of Barcelona</p><p><i>Title:</i> Synchronisation of active agents</p><p><i>Abstract:</i> Synchronisation is a widespread collective phenomenon, from mechanically coupled pendulum, to flashing fireflies or neurons. Synchronisation allows to reach a coherent state that might be responsible for several functionalities (the propulsion of a ciliated microorganism, or the collective turns of a school of sardines when a predator attacks). Under which conditions can a population of agents, carrying an internal clock beating at different frequencies, synchronise their rhythms? What is the role of motility in this context? It is known that a distribution of immobile oscillators cannot globally synchronise if they interact in a physical space of dimension less than 5. I will discuss how motion allows for synchronisation down to two dimensions. I'll summarise how the feedback between motion and the internal dynamics of the oscillator's agents give rise to novel self-organised states. Then I will present a simple experimental set-up that provides a platform to study this problem in a precise way.</p></div><figure class="board"><img src="images/chalk-demian-levis.jpg" alt="Blackboard from Demian Levis’s chalk talk" loading="lazy"></figure></article>
+<hr class="rule"><article class="talk"><div class="talk-text"><h3>Xingbo Yang</h3><p><i>Affiliation:</i> Physics of Life, TUD</p><p><i>Title:</i> Metabolic flux partitioning in living cells</p><p><i>Abstract:</i> Cells convert energy from the environment through metabolism to power cellular processes to stay alive and proliferate. Over a hundred years of biochemistry research has provided tremendous details about molecular players involved in the metabolic networks and how they are wired in metabolic pathways. Despite this detailed knowledge of metabolic networks, how cells dynamically partition energy to power various cellular processes remain unknown. What controls metabolic rate of a cell? What are the energetic costs of cytoskeleton self-organization, biosynthesis and ion homeostasis? How do cells partition energy in response to dynamical changes of these processes? To answer these questions, high resolution techniques to measure metabolic fluxes and biophysical modeling of metabolism are required. In this talk, I will introduce new techniques to measure metabolic fluxes with subcellular resolution and biophysical models to dissect flux partitioning mechanisms in living cells.</p></div><figure class="board"><img src="images/chalk-xingbo-yang.jpg" alt="Blackboard from Xingbo Yang’s chalk talk" loading="lazy"></figure></article>
+<hr class="rule"><div class="year">2025</div>
+<hr class="rule"><article class="talk"><div class="talk-text"><h3>Anna Erzberger</h3><p><i>Affiliation:</i> EMBL</p><p><i>Title:</i> How geometry shapes living matter across scales</p><p><i>Abstract:</i> The spontaneous generation of patterns and structures is fundamental to the functioning of living systems. Such processes often take place on domains that themselves evolve in time, and they can be guided by or coupled to geometrical features. I will discuss different biophysical examples that illustrate how geometry directs spatial organization across scales.</p></div><figure class="board"><img src="images/chalk-anna-erzberger.jpg" alt="Blackboard from Anna Erzberger’s chalk talk" loading="lazy"></figure></article>
+<hr class="rule"><article class="talk"><div class="talk-text"><h3>Héctor García-Seisdedos</h3><p><i>Affiliation:</i> IBMB Barcelona</p><p><i>Title:</i> Infinite assembly of folded proteins</p><p><i>Abstract:</i> About half of all proteins with known structures form symmetric complexes. While symmetry imparts unique geometric and functional advantages, it also carries inherent risks. In sickle cell disease, for instance, the symmetry of hemoglobin amplifies the effect of a single mutation, driving its assembly into pathogenic fibrils. We sought to examine the generality of this phenomenon and its relationship to protein structural geometry. We introduced point mutations into twelve symmetric protein complexes. Remarkably, all of them formed supramolecular assemblies both in vitro and in vivo upon expression in S. cerevisiae. Structural analysis of the resulting mutants revealed supramolecular assembly hot spots that could be predicted from geometric principles. These hot spots are typically shielded by charged residues, suggesting a natural mechanism that prevents their unintended assembly. Thus, single-point mutations can frequently trigger folded proteins to self-assemble into higher-order structures. Our findings demonstrate that minimal perturbations can drive proteins across a phase boundary—from finite assemblies to infinite networks—with profound implications for evolution, disease, and protein design.</p></div><figure class="board"><img src="images/chalk-hector-garcia-seisdedos.jpg" alt="Blackboard from Héctor García-Seisdedos’s chalk talk" loading="lazy"></figure></article>
+<hr class="rule"><article class="talk"><div class="talk-text"><h3>Riccardo Rao</h3><p><i>Affiliation:</i> Complexity Science Hub Vienna</p><p><i>Title:</i> Bacterial Proliferation Pattern Formation</p><p><i>Abstract:</i> Bacteria can form diverse, spatially heterogeneous cell density patterns, ranging from simple concentric rings to dynamic spiral waves in growing colonies. These pattern formation phenomena are crucial as they reflect how cellular processes, such as metabolism, operate in heterogeneous chemical environments. They can be studied quantitatively in the lab using simplified set-ups. An intriguing example is the sequential formation of narrow bands of high cell density in a test tube, where bacteria are immobilized and subjected to gradients of oxygen and nutrients. This phenomenon was first observed over 80 years ago and occurs even in clonal populations. However, key aspects of the dynamics of band formation and the pattern formation as a whole remain obscure. In my presentation, I will introduce the unexpected variety of pattern shapes that can arise and present a quantitative model that explains these phenomena. Finally, the simplicity and richness of this proliferation pattern formation can make it a model system to study the response of cellular processes to heterogeneous environments.</p></div><figure class="board"><img src="images/chalk-riccardo-rao.jpg" alt="Blackboard from Riccardo Rao’s chalk talk" loading="lazy"></figure></article>
+<hr class="rule"><article class="talk"><div class="talk-text"><h3>Hugo Dourado</h3><p><i>Affiliation:</i> Heinrich Heine University</p><p><i>Title:</i> Growth Balance Analysis: A minimal theoretical framework for self-replicating cell models</p><p><i>Abstract:</i> Self-replicating cells face a fundamental trade-off: they must allocate limited biomass resources among biosynthesis, metabolism, and maintenance while sustaining the fastest possible growth rate. Growth Balance Analysis (GBA) is a minimal, physics-like framework that formalizes this general trade-off under a few basic assumptions about self-replicating cells at balanced growth: they must grow by producing all of its components (including intermediate metabolites as well the proteins that catalyze the biochemical reactions), conserve mass, obey kinetic rate laws, and maintain constant density over time. We then formulate the corresponding fitness optimization problem on independent coordinates in close analogy to fundamental theories in physics. The resulting analytical predictions reveal optimal relationships between biochemical reaction fluxes, biomass composition, and growth rate. In this chalk talk, I will outline the core ideas of GBA, show how it unifies concepts from flux balance analysis and resource allocation theory, present some experimental validations, and discuss extensions of the framework to dynamics. The aim is to show that even complex growth phenomena can be understood from simple first principles.</p></div><figure class="board"><img src="images/chalk-hugo-dourado.jpg" alt="Blackboard from Hugo Dourado’s chalk talk" loading="lazy"></figure></article>
+<hr class="rule"><article class="talk"><div class="talk-text"><h3>Izaak Neri</h3><p><i>Affiliation:</i> King’s College London</p><p><i>Title:</i> Amendable decisions in living systems</p><p><i>Abstract:</i> A distinct feature of living systems is their capacity to take decisions based on uncertain environmental signals. Examples span from the microscopic scale of cells differentiating based on the concentration of a morphogene, to the macroscopic scale of decisions by animals or human beings. The current paradigm in decision theory is based on the assumption that decisions, once taken, cannot be revoked. However, living systems often amend their decisions if accumulated evidence favors an alternative hypothesis. In this paper, we develop a theory for amendable decision making in living systems. We find that, in contrast with irrevocable decisions, optimal amendable decisions can be taken in a finite average time at zero error probability. Our theory successfully predicts the outcome of a visual experiment involving human participants and the accuracy of cell-fate decisions in early development. These case studies demonstrate the broad applicability of the amendable decision paradigm in biology.</p></div><figure class="board"><img src="images/chalk-izaak-neri.jpg" alt="Blackboard from Izaak Neri’s chalk talk" loading="lazy"></figure></article>
+<hr class="rule"><article class="talk"><div class="talk-text"><h3>Stefano Bo</h3><p><i>Affiliation:</i> King’s College London</p><p><i>Title:</i> Single-molecule trajectories of reactants in chemically active condensates: stochastic dynamics and thermodynamics</p><p><i>Abstract:</i> Biomolecular condensates provide distinct chemical environments, which control various cellular processes without requiring a membrane. The diffusive dynamics and chemical kinetics of individual molecules inside condensates can be studied experimentally by fluorescent labelling, offering key insights into subcellular dynamics. I will present how biomolecular condensates govern the kinetics of chemical reactions and how this is reflected in the noisy dynamics of labelled molecules. This will allow me to discuss how the physics of phase separation influences the evolution of single-molecule trajectories and governs their statistics. I will sketch how one can leverage such effects to measure the physical properties of condensates from single-molecule trajectories. I will then show that, out of equilibrium, the interactions leading to phase separation induce systematic directed motion at the level of single molecules. I will discuss how this can provide an alternative explanation for the chemotaxis of active enzymes, which has been experimentally observed. I will then present how we can use stochastic thermodynamics to quantify how far from equilibrium condensates are. In closing, I will extend these considerations to other biophysical systems studied at the single-molecule level.</p></div><figure class="board"><img src="images/chalk-stefano-bo.jpg" alt="Blackboard from Stefano Bo’s chalk talk" loading="lazy"></figure></article>
+<hr class="rule"><article class="talk"><div class="talk-text"><h3>Christoph Zechner</h3><p><i>Affiliation:</i> SISSA</p><p><i>Title:</i> Exploiting molecular fluctuations to understand chromatin looping dynamics in single cells</p><p><i>Abstract:</i> Stochastic phenomena play an important role in many biological systems, ranging from gene regulation to cell-fate determination. Understanding such phenomena raises new theoretical challenges at the interface between probability theory, statistical physics and computation. In this talk I will discuss how random fluctuations of biological systems can be harnessed to infer inaccessible states and interactions from data. I will illustrate this concept in the context of chromatin dynamics, where fluctuations in two-point live-imaging data can be used to extract the duration and frequency of chromatin loops in single cells.</p></div><figure class="board"><img src="images/chalk-christoph-zechner.jpg" alt="Blackboard from Christoph Zechner’s chalk talk" loading="lazy"></figure></article>
+<hr class="rule"><article class="talk"><div class="talk-text"><h3>Marco Polin</h3><p><i>Affiliation:</i> IMEDEA</p><p><i>Title:</i> How do eukaryotic cells synchronise their flagella?</p><p><i>Abstract:</i> Cilia and flagella are slender organelles ubiquitous in the eukaryotic world, where they support a variety of tasks ranging from mechanochemical sensing to regulate cell proliferation in renal ducts, to pumping of cerebrospinal flow by ependymal cells and establishment of planar cell polarity. In groups of motile cilia, whether belonging to the same cell or to different ones, coordinated motion is ubiquitous. The metachronal waves observed at a large scale can increase transport efficiency in ciliated epithelia in a noise-dependent manner and improve swimming efficiency of ciliated microorganisms. At the single-cell level, active modulation of flagellar synchrony can help microorganisms explore space and respond to environmental stimuli. What is the mechanism underpinning flagellar coordination? In this talk I will review how the theory of self-sustained phase oscillators can help us in approaching quantitatively the phenomenon of flagellar coordination. Through two examples, one based of pairs of flagellated cells and the other on pairs of flagella from single cells, we will then see that this apparently simple phenomenon belies subtleties in the origin of interflagellar coupling.</p></div><figure class="board"><img src="images/chalk-marco-polin.jpg" alt="Blackboard from Marco Polin’s chalk talk" loading="lazy"></figure></article>
+<hr class="rule"><article class="talk"><div class="talk-text"><h3>Artemy Kolchinsky</h3><p><i>Affiliation:</i> Universitat Pompeu Fabra</p><p><i>Title:</i> Thermodynamic inference in complex systems using simple observables</p><p><i>Abstract:</i> In nonequilibrium systems, stochastic fluctuations are related to thermodynamic properties such as dissipation (rate of entropy production) and affinity. By exploiting such relationships, we hope to infer thermodynamics of complex systems from simple, empirically accessible statistics. I will discuss our recent work on thermodynamic inference in high-dimensional systems — such as spin glasses, biological and neuronal networks, and non-Markovian processes with long memory — where standard techniques fail due to computational and statistical limitations. To make progress, we develop a nonequilibrium analogue of the Maximum Entropy (MaxEnt) principle. By exploiting powerful results from convex duality, we estimate entropy production from simple observables, such as spatiotemporal correlation functions, without having to infer state or trajectory probability distributions. If time allows, I will also discuss our previous work on the relationship between thermodynamic cycle affinities and time-lagged correlation functions (<a href="https://doi.org/10.1103/PhysRevLett.131.077101">10.1103/PhysRevLett.131.077101</a>).</p></div><figure class="board"><img src="images/chalk-artemy-kolchinsky.jpg" alt="Blackboard from Artemy Kolchinsky’s chalk talk" loading="lazy"></figure></article>
+<hr class="rule"><div class="year">2024</div>
+<hr class="rule"><article class="talk"><div class="talk-text"><h3>Martin Lenz</h3><p><i>Affiliation:</i> CNRS - Université Paris-Saclay - ESPCI</p><p><i>Title:</i> Slimming down through frustration</p><p><i>Abstract:</i> In many diseases, proteins aggregate into fibers. Why? One could think of molecular reasons, but here we try something more general. We propose that when particles with complex shapes aggregate, geometrical frustration builds up and fibers generically appear. Such a rule could be very useful in designing artificial self-assembling systems.</p></div><figure class="board"><img src="images/chalk-martin-lenz.jpg" alt="Blackboard from Martin Lenz’s chalk talk" loading="lazy"></figure></article>
+<hr class="rule"><article class="talk"><div class="talk-text"><h3>Sebastian Fürthauer</h3><p><i>Affiliation:</i> Institute of Applied Physics, TU Wien</p><p><i>Title:</i> The physics of highly crosslinked cytoskeletal networks</p><p><i>Abstract:</i> Living cells move, deform and divide. The engine of these behaviors is the cytoskeleton, a highly crosslinked network of polymer filaments and molecular scale motors that use chemical energy to do work. We develop analytic theory that predicts how the micro-scale properties of molecular motors and crosslinks tune the networks emergent material properties and generate predictable, and possibly controllable, behaviors. I will present how this theory is constructed, and discuss its implications for cytoskeletal networks in vitro and in vivo.</p></div><figure class="board"><img src="images/chalk-sebastian-furthauer.jpg" alt="Blackboard from Sebastian Fürthauer’s chalk talk" loading="lazy"></figure></article>
+<hr class="rule"><article class="talk"><div class="talk-text"><h3>William Podlaski</h3><p><i>Affiliation:</i> FC Champalimaud</p><p><i>Title:</i> Computation in the balanced regime in low-rank excitatory-inhibitory spiking networks</p><p><i>Abstract:</i> Deep feedforward and recurrent neural networks have become successful functional models of the brain, but they neglect obvious biological details such as spikes and Dale's law (the separation between excitatory and inhibitory neurons). Here we argue that these mechanistic details are crucial in order to understand how real neural circuits operate. Towards this aim, we put forth a new framework for spike-based computation in low-rank excitatory-inhibitory spiking networks, and contrast it with other, more traditional approaches for thinking about neural computation. By considering populations with rank-1 connectivity, we cast each neuron's spiking threshold as a boundary in a low-dimensional input-output space. We then show how the combined thresholds of a population of inhibitory neurons form a stable boundary in this space, and those of a population of excitatory neurons an unstable boundary. Combining the two boundaries results in a rank-2 EI network with inhibition-stabilized dynamics at the intersection of the two boundaries. The computation of the resulting networks can be understood as the difference of two convex functions, and is thereby capable of universal function approximation. We demonstrate several additional properties of these networks, including noise suppression and amplification, irregular activity and synaptic balance, as well as how they relate to rate network dynamics in the limit that the boundary becomes soft. Overall, our work proposes a new perspective on spiking networks that may serve as a starting point for a mechanistic understanding of biological spike-based computation.</p></div><figure class="board"><img src="images/chalk-william-podlaski.jpg" alt="Blackboard from William Podlaski’s chalk talk" loading="lazy"></figure></article>
+<hr class="rule"><article class="talk"><div class="talk-text"><h3>Severine Atis</h3><p><i>Affiliation:</i> Institut Pprime, CNRS</p><p><i>Title:</i> Growing in flows: from scaling laws to microbial jets</p><p><i>Abstract:</i> Biological systems can self-organize in complex structures, able to evolve and adapt to widely varying environmental conditions. In this talk, I will illustrate how simple growth dynamics, when coupled with environmental properties, can lead to a diversity of self-organization phenomena in two experimental model systems: reaction waves propagating in disordered flows, and living microorganisms growing on viscous substrates. Resulting from the balance between molecular diffusion and nonlinear chemical kinetics, autocatalytic reactions can generate self-sustained fronts which propagate like progressive waves. I will show that in the presence of a disordered flow, the front fluctuations display scaling laws consistent with the universal behavior predicted by the Kardar-Parisi-Zhang stochastic growth model. Controlled by the mean flow amplitude, the system encompasses three distinct universality classes associated with different front morphologies and dynamical behaviors. In a second system, I will focus on mutual interactions between microbial growth and fluid flows. I will show that the metabolic activity of an expanding population of microorganisms can produce strong hydrodynamical flows when grown on top of a viscous medium. These flows in turn affect the growth dynamics, and can drive positive feedback phenomena such as accelerated propagation, fragmentation of the initial colony and the formation of growing microbial jets.</p></div><figure class="board"><img src="images/chalk-severine-atis.jpg" alt="Blackboard from Severine Atis’s chalk talk" loading="lazy"></figure></article>
+<hr class="rule"><article class="talk"><div class="talk-text"><h3>Omer Karin</h3><p><i>Affiliation:</i> Imperial College</p><p><i>Title:</i> Self-organization of long-term biological memory</p><p><i>Abstract:</i> Many biological systems, including epigenetic and immune memory systems, exhibit prolonged but finite responses. In this talk, I will present our analysis of two distinct memory systems: transgenerational gene silencing in C. elegans worms, and plasma cell persistence following immune responses in mice and humans. Despite utilizing different biological mechanisms, these systems share essential mathematical similarities that are captured by a general theory of self-tuning by competition to the vicinity of a noisy saddle-node bifurcation. The theory makes specific predictions, which we used to analyze a broad range of phenomena, including the buildup of memory, heterogeneity within and between responses, and the effect of perturbations. I will conclude by discussing how the self-tuning mechanism can be utilized as a basis for controlling biological systems.</p></div><figure class="board"><img src="images/chalk-omer-karin.jpg" alt="Blackboard from Omer Karin’s chalk talk" loading="lazy"></figure></article>
+<hr class="rule"><article class="talk"><div class="talk-text"><h3>Elodie Laine</h3><p><i>Affiliation:</i> Sorbonne Université</p><p><i>Title:</i> Explaining Conformational Diversity in Protein Families through Molecular Motions</p><p><i>Abstract:</i> Proteins play a central role in biological processes, and understanding how they move and deform in solution is crucial for unraveling their functional mechanisms. Recent advancements in high-throughput technologies have greatly enhanced our knowledge of protein structures. Yet comprehensively describing and predicting their multiple conformational states and motions remains challenging. I will present our recent developments to move forward in this direction. I will discuss the complementarity of physics- or geometry-based methods with machine learning-based approaches.</p></div><figure class="board"><img src="images/chalk-elodie-laine.jpg" alt="Blackboard from Elodie Laine’s chalk talk" loading="lazy"></figure></article>
+<hr class="rule"><article class="talk"><div class="talk-text"><h3>Steffen Werner</h3><p><i>Affiliation:</i> Wageningen University</p><p><i>Title:</i> Worms through the eyes of a physicist: From phase transitions in gene expression data to optimality in behaviour</p><p><i>Abstract:</i> Patterns in biology typically arise from the intricate interplay between many constituents. Physics has a successful history in navigating and providing insights in such complex and high-dimensional datasets by means of minimal models and effective theories. My group uses flatworms and nematode worms as simple model systems in combination with physics-inspired theories to understand design principles from allometric scaling laws in body patterning to neural control of behaviour. In my talk, I will mainly focus on two examples using C. elegans worms: a novel approach to analyse noisy gene expression data and insights about optimality in animal locomotion.</p></div><figure class="board"><img src="images/chalk-steffen-werner.jpg" alt="Blackboard from Steffen Werner’s chalk talk" loading="lazy"></figure></article>
+<hr class="rule"><div class="year">2023</div>
+<hr class="rule"><article class="talk"><div class="talk-text"><h3>Nuno Araújo</h3><p><i>Affiliation:</i> FCUL</p><p><i>Title:</i> Modeling biological matter at microscale: from cells to tissues</p><p><i>Abstract:</i> The modeling of biological matter such as cells and tissue is ambitious. It not only involves processes at length and time scales over several orders of magnitude, but also biochemical processes occurring in the interior of the cell are likely to be relevant. In addition, in complex environments they are able self-propel, grow, divide, change shape, and respond slowly with memory, posing several changes to their theoretical model. In this talk, we will discuss how he have been combining theoretical modeling and advanced computational techniques to develop coarse-grained model that can reach the relevant scales and still describe the desired phenomena. Examples will include the bacteria motility in the presence of static and moving obstacles, the proliferation of cells in granular beds, and the mechanics of cell tissues on substrates.</p></div><figure class="board"><img src="images/chalk-nuno-araujo.jpg" alt="Blackboard from Nuno Araújo’s chalk talk" loading="lazy"></figure></article>
+<hr class="rule"><article class="talk"><div class="talk-text"><h3>Maros Pleska</h3><p><i>Affiliation:</i> The Rockefeller University</p><p><i>Title:</i> The structure of noise: Non-genetic individuality, changeability and inheritance in microbial behavior</p><p><i>Abstract:</i> Clonal populations of microorganisms thriving in constant and homogeneous environments often display remarkable phenotypic diversity, often termed as phenotypic “noise”. Several molecular processes capable of generating such diversity have been elucidated in the context of individual genes, but how the signatures of these processes propagate to shape the structure of non-genetic diversity in the context of composite traits remains mostly unclear. I will introduce a general experimental and theoretical framework that recently allowed us to quantify bacterial swimming behavior, a highly dynamic and complex aspect of the phenotype, using a small number of orthogonal and interpretable behavioral traits. I will also discuss how representing the whole-lifetime behavior of individuals by trajectories in a low-dimensional trait space allowed us to decompose trait variation into individual sources, thus providing a coarse-grained overview of the population and temporal structure of non-genetic diversity. Finally, I will briefly outline how the described framework for analyzing the behavior of microorganisms can be extended to more complex ecological settings in order to probe the interplay between non-genetic diversity, phenotypic plasticity, and ecological dynamics.</p></div><figure class="board"><img src="images/chalk-maros-pleska.jpg" alt="Blackboard from Maros Pleska’s chalk talk" loading="lazy"></figure></article>
+<hr class="rule"><article class="talk"><div class="talk-text"><h3>Bingkan Xue</h3><p><i>Affiliation:</i> University of Florida</p><p><i>Title:</i> Internal cues and memory for population adaptation in varying environments</p><p><i>Abstract:</i> To adapt to varying environments, organisms can rely on external cues to infer and express favorable traits. Such cues are valuable for the population if they are informative about the environmental condition. We propose an alternative source of information, which comes from internal states of the organisms, without them having to sense external signals. These internal states can become correlated with the external environment through the process of selection, thus being available as internal cues. We argue that these internal states also serve as a form of memory that allows organisms to exploit temporal structure in the environment to predict future conditions. The value of such memory for population adaptation is given by the amount of information between the past and future environments. We illustrate these theoretical ideas with the example of seed dormancy by considering the dependence of the germination fraction on the seed age.</p></div><figure class="board"><img src="images/chalk-bingkan-xue.jpg" alt="Blackboard from Bingkan Xue’s chalk talk" loading="lazy"></figure></article>
+<hr class="rule"><article class="talk"><div class="talk-text"><h3>Saúl Ares</h3><p><i>Affiliation:</i> CNB-CSIC</p><p><i>Title:</i> Regulation and Feedback in Biological Systems: From Epidemics to Organ Development</p><p><i>Abstract:</i> In this seminar, I will provide an overview of our current research on diverse topics related to the complexities of biological systems. I will discuss epidemic dynamics and vaccination strategies, organ size precision and feedback control mechanisms in the developing Drosophila eye, the interplay of light and temperature on plant growth, and the genetic regulation and physical constraints in pattern formation in nitrogen-fixing filaments of cyanobacteria. I will highlight key findings and their implications, emphasizing the importance of multidisciplinary approaches, mathematical modeling, and simulations in advancing our understanding of complex biological systems. This blackboard talk intends to encourage discussion, and we can delve into particular details based on feedback and interests from the audience.</p></div><figure class="board"><img src="images/chalk-saul-ares.jpg" alt="Blackboard from Saúl Ares’s chalk talk" loading="lazy"></figure></article>
+<hr class="rule"><article class="talk noimg"><div class="talk-text"><h3>Anne-Florence Bitbol</h3><p><i>Affiliation:</i> EPFL</p><p><i>Title:</i> Impact of population spatial structure on mutant fixation, from models on graphs to the gut</p><p><i>Abstract:</i> Microbial populations often have complex spatial structures, with homogeneous competition holding only at a local scale. Population structure can strongly impact evolution, in particular by affecting the fixation probability of mutants. I will first discuss a general model for describing structured populations on graphs. I will show that by tuning migration asymmetry in the rare migration regime, the star graph transitions from amplifying to suppressing natural selection. I will also discuss the impact of increasing migration rates. The results from our model are universal in the sense that they do not hinge on a modeling choice of microscopic dynamics or update rules. Instead, they depend on migration asymmetry, which can be experimentally tuned and measured. Then I will show that the specific structure of the gut, with hydrodynamics and gradients of food and bacterial concentrations, can increase the fixation probability of neutral mutants. Our results can be rationalized by introducing an active population, which consists of those bacteria that are actively consuming food and dividing. Thus, the specific environment of the gut enhances neutral bacterial diversity.</p></div></article>
+</section>
+
+</main>
+<footer><div class="wrap">Sartori Group · Gulbenkian Institute of Molecular Medicine, Oeiras, Portugal</div></footer>
+<script>
+
+const views = ["home","assemblies","evolution","energetics","publications","people","cv","join","contact","chalk"];
+const resViews = ["assemblies","evolution","energetics"];
+const resBtn = document.getElementById("resBtn");
+function show(){
+  let v = location.hash.replace("#","");
+  if (!views.includes(v)) v = "home";
+  document.querySelectorAll(".view").forEach(s => s.classList.toggle("shown", s.id === "v-" + v));
+  document.querySelectorAll("nav [data-v]").forEach(a => a.classList.toggle("active", a.dataset.v === v || (v==="cv" && a.dataset.v==="people")));
+  resBtn.classList.toggle("active", resViews.includes(v));
+  resBtn.parentElement.classList.remove("open");
+  resBtn.setAttribute("aria-expanded","false");
+  const t = {home:"",assemblies:"Assemblies",evolution:"Evolution",energetics:"Energetics",publications:"Publications",people:"People",cv:"CV",join:"Join",contact:"Contact",chalk:"ChalkQBio"}[v];
+  document.title = t ? t + " — Sartori Group" : "Sartori Group";
+  window.scrollTo(0,0);
+}
+resBtn.addEventListener("click", e => {
+  const li = resBtn.parentElement;
+  const open = li.classList.toggle("open");
+  resBtn.setAttribute("aria-expanded", String(open));
+  e.stopPropagation();
+});
+document.addEventListener("click", () => { resBtn.parentElement.classList.remove("open"); resBtn.setAttribute("aria-expanded","false"); });
+window.addEventListener("hashchange", show);
+show();
+</script>
+</body>
+</html>
