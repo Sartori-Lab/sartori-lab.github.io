@@ -70,6 +70,8 @@ hr.rule{border:0;border-top:2px solid var(--rule);margin:40px 0}
 @media (max-width:760px){.split{grid-template-columns:1fr}}
 .related{font-size:16px}
 .related b{display:block;margin-bottom:4px}
+.related a{display:block}
+.related a+a{margin-top:6px}
 .ph{background:var(--ph);color:var(--ph-text);font-size:13px;display:flex;align-items:center;justify-content:center;text-align:center;padding:16px;aspect-ratio:4/3}
 #v-publications .prose{font-size:18px;padding-bottom:30px;border-bottom:2px solid var(--rule);margin-bottom:36px}
 .pubs{list-style:none;padding:0;margin:0;font-size:18px;line-height:1.3;color:var(--teal)}
@@ -140,7 +142,7 @@ footer .wrap{padding-top:26px;padding-bottom:26px;font-size:13px;color:var(--mut
   </div>
   <hr class="rule">
   <div class="tiles">
-    <a class="tile" href="#assemblies"><img src="images/tile-assemblies.jpg" alt=""><span>Embedding assemblies</span></a>
+    <a class="tile" href="#assemblies"><img src="images/tile-assemblies.jpg" alt=""><span>Multifarious assemblies</span></a>
     <a class="tile" href="#evolution"><img src="images/tile-evolution.jpg" alt=""><span>Evolving interactions</span></a>
     <a class="tile" href="#energetics"><img src="images/tile-energetics.jpg" alt=""><span>Energetic constraints</span></a>
   </div>
@@ -148,25 +150,25 @@ footer .wrap{padding-top:26px;padding-bottom:26px;font-size:13px;color:var(--mut
 
 <!-- ASSEMBLIES -->
 <section class="view" id="v-assemblies">
-  <h1>Embedding function in protein assemblies</h1>
-  <p class="prose">Most cellular functions are carried out by assemblies of multiple proteins referred to as protein complexes. Although we often explain how protein complexes function by analogy with engineered devices, there are fundamental differences. First, unlike man made machines, protein complexes <em>self-assemble</em> from their constituent components. Second, the concerted motion of atoms in an assembly may not be analogous to that of rigid cogs moving relative to each other. Finally, as proteins operate at the thermal energy scale, reliable operation is a challenge.</p>
+  <h1>Multifarious assemblies</h1>
+  <p class="prose">Most cellular functions are carried out by assemblies of many different molecules. Some are solid-like, such as protein complexes with a well-defined structure. Others are liquid-like, such as the condensates that form when a mixture separates into distinct phases. Both kinds form in the cytoplasm, a crowded mixture of thousands of molecular species, and so face a common challenge: each assembly must find its own few components among many. Unlike man-made machines, these assemblies build themselves, and they do so at the thermal energy scale. We study how such multifarious mixtures can reliably form many different assemblies, and how the composition of a mixture can store and retrieve information.</p>
   <hr class="rule">
-  <h3>Self-assembly state of matter</h3>
+  <h3>Solid assemblies</h3>
   <div class="split">
     <div>
-      <p>One fundamental characteristic of protein complexes is that they self-assemble from their constituent components. Self-assembly of hundreds of different complexes occurs in the cytoplasm, a mixture of thousands of different protein species. This makes accurate assembly a formidable discriminatory task, as each growing complex needs to distinguish its few constituent proteins. <em>What are the states of matter of a mixture of thousands of proteins? Is self-assembly a robust phase? What are the generic properties of assemblies that allow them to self-assemble accurately?</em></p>
-      <div class="related"><b>Related Publications</b><a href="https://www.pnas.org/content/117/1/114">Lessons from equilibrium statistical physics regarding the assembly of protein complexes. P. Sartori and S. Leibler. <strong>Proc. Natl. Acad. Sci., 2020 117 (1)</strong></a></div>
+      <p>One fundamental characteristic of protein complexes is that they self-assemble from their constituent components. Self-assembly of hundreds of different complexes occurs in the cytoplasm, a mixture of thousands of different protein species. This makes accurate assembly a formidable discriminatory task, as each growing complex needs to distinguish its few constituent proteins. A related challenge arises when building polymers: making a specific sequence out of a few monomer types requires assembly to be both fast and accurate. <em>What are the states of matter of a mixture of thousands of proteins? Is self-assembly a robust phase? What are the generic properties of assemblies that allow them to self-assemble accurately and fast?</em></p>
+      <div class="related"><b>Related Publications</b><a href="https://www.pnas.org/content/117/1/114">Lessons from equilibrium statistical physics regarding the assembly of protein complexes. P. Sartori and S. Leibler. <strong>Proc. Natl. Acad. Sci., 2020 117 (1)</strong></a><a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.134.038402">High-Speed Combinatorial Polymerization through Kinetic-Trap Encoding. F. Benoist &amp; P. Sartori. <strong>Physical Review Letters, 2025</strong></a></div>
     </div>
     <div class="ph">Image: Prot_Ass2.jpg</div>
   </div>
   <hr class="rule">
-  <h3>Coarse graining assembly function</h3>
+  <h3>Liquid assemblies</h3>
   <div class="split">
     <div>
-      <p>The function of an assembly is determined by the motion of its atomic structure. Different molecular forces underlay the motion of the large number of atoms in an assembly (10<sup>5</sup> for the ATP synthase). This makes the dimensionality of assemblies function formidably large. Surprisingly, very simple mechano-chemical descriptions of assemblies, with two or three degrees of freedom, have been greatly succesful in biophysics. <em>How do such simple descriptions emerge from the high dimensional structural description of assemblies? Can we describe protein assemblies as a “special” kind of evolved elastic material?</em></p>
-      <div class="related"><b>Related Publications</b><a href="https://journals.aps.org/prx/abstract/10.1103/PhysRevX.14.011042">Evolutionary conservation of mechanical strain distributions in functional transitions of protein structures. P. Sartori and S. Leibler. <strong>Physical Review X, 2024</strong></a></div>
+      <p>Besides solid complexes, the cytoplasm hosts liquid-like assemblies that form by phase separation. In a mixture of thousands of components, the number of possible coexisting phases is vast, and which ones form depends on the interactions among all the components. These interactions can be such that the mixture stores the composition of many distinct phases, and forms one of them when given only a partial cue, much like an associative memory. <em>How many distinct liquid phases can a multicomponent mixture encode? How does metastability shape which phases actually form? Could cells exploit such mixtures to store and retrieve information?</em></p>
+      <div class="related"><b>Related Publications</b><a href="https://journals.aps.org/prx/abstract/10.1103/lxrw-98f4">Metastable Phase Separation and Information Retrieval in Multicomponent Liquids. D. Marcato, R. Braz-Teixeira, I. Neri &amp; P. Sartori. <strong>Physical Review X, 2026</strong></a><a href="https://www.pnas.org/doi/abs/10.1073/pnas.2320504121">Liquid Hopfield model: Retrieval and localization in multicomponent liquid mixtures. R. Braz-Teixeira, G. Carugno, I. Neri &amp; P. Sartori. <strong>Proc. Natl. Acad. Sci., 2024</strong></a></div>
     </div>
-    <div class="ph">Image: CellularMachine_Fig1.png</div>
+    <div class="ph">Image: Liquid assemblies</div>
   </div>
 </section>
 
@@ -184,12 +186,13 @@ footer .wrap{padding-top:26px;padding-bottom:26px;font-size:13px;color:var(--mut
     <div class="ph">Image: Fig_Binkan1.jpg</div>
   </div>
   <hr class="rule">
-  <h3>Ecosystems as coupled responses</h3>
+  <h3>Evolution of assembly function</h3>
   <div class="split">
     <div>
-      <p>Just as the environment affects how organisms respond, organisms themselves can modify their surroundings. Furthermore, within an ecosystem, each species alters the environment in distinct ways, which may result in self-organization. A prime example of this is observed in soil samples, which allow one to distinguish estratification of different microbial species depending on their metabolism. <em>How does evolution sculpt this coupling among species? What result in the emergence of adaptation strategies at the ecosystem level?</em></p>
+      <p>The function of an assembly is determined by the motion of its atomic structure. Different molecular forces underlay the motion of the large number of atoms in an assembly (10<sup>5</sup> for the ATP synthase). This makes the dimensionality of assemblies function formidably large. Surprisingly, very simple mechano-chemical descriptions of assemblies, with two or three degrees of freedom, have been greatly succesful in biophysics. <em>How do such simple descriptions emerge from the high dimensional structural description of assemblies? Can we describe protein assemblies as a “special” kind of evolved elastic material?</em></p>
+      <div class="related"><b>Related Publications</b><a href="https://journals.aps.org/prx/abstract/10.1103/PhysRevX.14.011042">Evolutionary conservation of mechanical strain distributions in functional transitions of protein structures. P. Sartori and S. Leibler. <strong>Physical Review X, 2024</strong></a></div>
     </div>
-    <div class="ph">Image: Fig_Evolution1.png</div>
+    <div class="ph">Image: CellularMachine_Fig1.png</div>
   </div>
 </section>
 
@@ -198,6 +201,15 @@ footer .wrap{padding-top:26px;padding-bottom:26px;font-size:13px;color:var(--mut
   <h1>Thermodynamic constraints in biology</h1>
   <p class="prose">The function of biological systems can not escape the constraints of its “hardware architecture”. For example, the functions that a cellular network can achieve are constrained by its topology, the biochemical properties of its components, and the laws of thermodynamics. Although we are interested in different types of constraints, thermodynamic constraints have been a recurrent topic in our group.</p>
   <hr class="rule">
+  <h3>Thermodynamics of microbial growth</h3>
+  <div class="split">
+    <div>
+      <p>Unicellular organisms can grow on a remarkable variety of nutrients, using a correspondingly diverse set of metabolic pathways. Whatever the pathway, converting nutrients into biomass is irreversible, and part of the free energy taken up by the cell is dissipated as heat. <em>Does this dissipation constrain which nutrients cells can grow on, and how efficiently? Can thermodynamics explain the metabolic versatility of unicellular growth, and its limits?</em></p>
+      <div class="related"><b>Related Publications</b><a href="https://www.nature.com/articles/s41467-025-62975-5">Thermodynamic dissipation constrains metabolic versatility of unicellular growth. T. Cossetto, J. Rodenfels &amp; P. Sartori. <strong>Nature Communications, 2025, 16, 8543</strong></a></div>
+    </div>
+    <div class="ph">Image: Microbial growth</div>
+  </div>
+  <hr class="rule">
   <h3>Thermodynamics of development</h3>
   <div class="split">
     <div>
@@ -205,15 +217,6 @@ footer .wrap{padding-top:26px;padding-bottom:26px;font-size:13px;color:var(--mut
       <div class="related"><b>Related Publications</b><a href="https://www.molbiolcell.org/doi/10.1091/mbc.E19-09-0529">Contribution of increasing plasma membrane to the energetic cost of early zebrafish embryogenesis. J. Rodenfels, P. Sartori, S. Golfier, K. Nagendra, KM. Neugebauer, J. Howard. <strong>Molecular Biology of the Cell 31 (7)</strong></a></div>
     </div>
     <div class="ph">Image: Fig_Rodenfels.jpg</div>
-  </div>
-  <hr class="rule">
-  <h3>Copying cellular information</h3>
-  <div class="split">
-    <div>
-      <p>Subcellular systems carry out a variety of information processing tasks, e.g. copying information from sources such as DNA or RNA. Due to the small scale at wich these processes occur, they are subject to thermal fluction and, therefore, they are error-prone. To ensure fidelity, a number of energy-consuming mechanisms have evolved. <em>How do the laws of thermodynamics constrain the information processing capabilities of cellular systems? What is the relationship between the speed of information processing, its accuracy, and the energetic cost associated to it?</em></p>
-      <div class="related"><b>Related Publications</b><a href="https://journals.aps.org/prx/abstract/10.1103/PhysRevX.5.041039">Thermodynamics of error correction. P. Sartori and S. Pigolotti. <strong>Phys. Rev. X, 2015, 5, 041039</strong></a></div>
-    </div>
-    <div class="ph">Image: Figure6.png</div>
   </div>
 </section>
 
