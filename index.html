@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Sartori Group</title>
+<title>Sartori Lab</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,300&display=swap" rel="stylesheet">
@@ -35,7 +35,7 @@ header{margin-bottom:0}
 nav ul{list-style:none;margin:0;padding:6px 0 0;display:flex;flex-wrap:wrap;justify-content:flex-end;gap:6px 28px}
 nav li{position:relative;margin:0}
 nav a,nav button{font-family:var(--sans);font-weight:400;font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--text);background:none;border:0;border-bottom:2px solid transparent;padding:4px 0 10px;cursor:pointer;text-decoration:none;line-height:1.35;display:inline-block;vertical-align:top}
-nav a:hover,nav button:hover{opacity:1;border-bottom-color:var(--rule)}
+nav a:hover,nav button:hover{opacity:1;border-bottom-color:var(--rule);text-decoration:none}
 nav a.active,nav button.active{border-bottom-color:var(--rule)}
 .dropdown{display:none;position:absolute;left:-16px;top:100%;margin-top:4px;background:var(--bg);border:2px solid var(--rule);padding:12px 0;z-index:20;white-space:nowrap}
 .dropdown a{display:block;padding:7px 16px 7px 14px;border:0}
@@ -99,17 +99,17 @@ hr.rule{border:0;border-top:2px solid var(--rule);margin:40px 0}
 .contact-card{border-top:2px solid var(--rule);border-bottom:2px solid var(--rule);padding:30px 0 40px;font-size:18px}
 .contact-card h2{margin:0 0 18px;font-size:36px;color:var(--title)}
 .contact-card p:last-child{margin-bottom:0}
+.join{margin-top:56px}
 @media (max-width:760px){.contact-grid{grid-template-columns:1fr;gap:32px}}
 footer .wrap{padding-top:26px;padding-bottom:26px;font-size:13px;color:var(--muted);text-align:center}
 </style>
 </head>
 <body>
 <header><div class="wrap">
-  <h1 class="site-title"><a href="#home">Sartori Group</a></h1>
+  <h1 class="site-title"><a href="#home">Sartori Lab</a></h1>
   <nav aria-label="Main">
     <ul>
       <li><a href="#chalk" data-v="chalk">ChalkQBio</a></li>
-      <li><a href="#home" data-v="home">Home</a></li>
       <li class="has-drop"><button type="button" id="resBtn" aria-expanded="false">Research</button>
         <div class="dropdown">
           <a href="#assemblies" data-v="assemblies">Assemblies</a>
@@ -119,7 +119,6 @@ footer .wrap{padding-top:26px;padding-bottom:26px;font-size:13px;color:var(--mut
       </li>
       <li><a href="#publications" data-v="publications">Publications</a></li>
       <li><a href="#people" data-v="people">People</a></li>
-      <li><a href="#join" data-v="join">Join</a></li>
       <li><a href="#contact" data-v="contact">Contact</a></li>
     </ul>
   </nav>
@@ -278,16 +277,6 @@ footer .wrap{padding-top:26px;padding-bottom:26px;font-size:13px;color:var(--mut
   </ul>
 </section>
 
-<!-- JOIN -->
-<section class="view" id="v-join">
-  <h1>We are hiring</h1>
-  <div class="prose">
-    <p>We are currently seeking PhD students (5 years) and post-docs (3 years) that are interested in doing theoretical research at the interface of physics and biology.</p>
-    <p>The ideal candidate will have a strong theoretical physics background. No previous knowledge of biology is required, although an honest willingness to learn is a must. Some of our work is purely theoretical, and some has an experimental component, either through collaboration with experimental groups or analysis of publicly available data. Therefore, candidates must be open-minded about using whatever tools necessary to solve the problem at hand: analytics, numerics, or data analysis.</p>
-    <p>We are located at the Gulbenkian Institute. Being in a great biology institute has clear advantages in terms of collaborations. In addition, our goal is to establish interactions with the local and international physics community through an (already funded) visitors program.</p>
-    <p>If you want to apply, write an email to pablo.sartori (at) gimm.pt. Please include a copy of your CV and the names of three potential referrals.</p>
-  </div>
-</section>
 
 <!-- CONTACT -->
 <section class="view" id="v-contact">
@@ -300,6 +289,15 @@ footer .wrap{padding-top:26px;padding-bottom:26px;font-size:13px;color:var(--mut
       <p><strong>E:</strong> pablo.sartori (at) gimm.pt</p>
       <p>No twitter!</p>
     </div>
+  </div>
+  <div class="join">
+  <h1 id="join">We are hiring</h1>
+  <div class="prose">
+    <p>We are currently seeking PhD students (5 years) and post-docs (3 years) that are interested in doing theoretical research at the interface of physics and biology.</p>
+    <p>The ideal candidate will have a strong theoretical physics background. No previous knowledge of biology is required, although an honest willingness to learn is a must. Some of our work is purely theoretical, and some has an experimental component, either through collaboration with experimental groups or analysis of publicly available data. Therefore, candidates must be open-minded about using whatever tools necessary to solve the problem at hand: analytics, numerics, or data analysis.</p>
+    <p>We are located at the Gulbenkian Institute. Being in a great biology institute has clear advantages in terms of collaborations.</p>
+    <p>If you want to apply, write an email to pablo.sartori (at) gimm.pt. Please include a copy of your CV and the names of three potential referrals.</p>
+  </div>
   </div>
 </section>
 
@@ -345,23 +343,26 @@ footer .wrap{padding-top:26px;padding-bottom:26px;font-size:13px;color:var(--mut
 </section>
 
 </main>
-<footer><div class="wrap">Sartori Group · Gulbenkian Institute of Molecular Medicine, Oeiras, Portugal</div></footer>
+<footer><div class="wrap">Sartori Lab · Gulbenkian Institute of Molecular Medicine, Oeiras, Portugal</div></footer>
 <script>
 
-const views = ["home","assemblies","evolution","energetics","publications","people","cv","join","contact","chalk"];
+const views = ["home","assemblies","evolution","energetics","publications","people","cv","contact","chalk"];
+const aliases = {join:"contact"};
 const resViews = ["assemblies","evolution","energetics"];
 const resBtn = document.getElementById("resBtn");
 function show(){
-  let v = location.hash.replace("#","");
+  const h = location.hash.replace("#","");
+  let v = aliases[h] || h;
   if (!views.includes(v)) v = "home";
   document.querySelectorAll(".view").forEach(s => s.classList.toggle("shown", s.id === "v-" + v));
   document.querySelectorAll("nav [data-v]").forEach(a => a.classList.toggle("active", a.dataset.v === v || (v==="cv" && a.dataset.v==="people")));
   resBtn.classList.toggle("active", resViews.includes(v));
   resBtn.parentElement.classList.remove("open");
   resBtn.setAttribute("aria-expanded","false");
-  const t = {home:"",assemblies:"Assemblies",evolution:"Evolution",energetics:"Energetics",publications:"Publications",people:"People",cv:"CV",join:"Join",contact:"Contact",chalk:"ChalkQBio"}[v];
-  document.title = t ? t + " — Sartori Group" : "Sartori Group";
-  window.scrollTo(0,0);
+  const t = {home:"",assemblies:"Assemblies",evolution:"Evolution",energetics:"Energetics",publications:"Publications",people:"People",cv:"CV",contact:"Contact",chalk:"ChalkQBio"}[v];
+  document.title = t ? t + " — Sartori Lab" : "Sartori Lab";
+  const target = h !== v && document.getElementById(h);
+  if (target) target.scrollIntoView(); else window.scrollTo(0,0);
 }
 resBtn.addEventListener("click", e => {
   const li = resBtn.parentElement;

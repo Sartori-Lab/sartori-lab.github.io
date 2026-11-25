@@ -1,4 +1,4 @@
-# Sartori Group website
+# Sartori Lab website
 
 Source of the lab website, served with GitHub Pages.
 
