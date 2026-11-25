@@ -6,19 +6,19 @@
 <title>Sartori Lab</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;0,700;1,300&display=swap" rel="stylesheet">
 <style>:root{
   --bg:#eff3f4; --text:#2a3030; --strong:#232929; --muted:#6b7272; --rule:#ffffff;
   --title:#525c5b; --teal:#2d524e; --teal-strong:#1f4f4c;
   --link:#2d524e; --ph:#e2e8ea; --ph-text:#7d8789; --frame:#1f2323; --drop:#ffffff;
-  --sans:"Source Sans 3","Source Sans Pro","Helvetica Neue",Arial,sans-serif;
+  --sans:"Source Sans Pro","Source Sans 3","Helvetica Neue",Arial,sans-serif;
   --display:"Barlow Condensed","DIN Condensed","Arial Narrow",sans-serif;
   color-scheme:light; box-sizing:border-box;
   padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
 }
 *,*::before,*::after{box-sizing:inherit}
 html{scroll-padding-top:env(safe-area-inset-top,0px)}
-body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);font-weight:300;font-size:17px;line-height:1.35}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);font-weight:300;font-size:16px;line-height:1.2}
 a{color:var(--link);text-decoration:none}
 a:hover{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:2px}
 a:focus-visible,button:focus-visible{outline:2px solid var(--strong);outline-offset:3px}
@@ -47,16 +47,17 @@ li.open .dropdown{display:block}
   nav ul{justify-content:center;gap:4px 20px}
   .site-title{font-size:36px}
 }
-main.wrap{padding-top:44px;padding-bottom:90px;border-top:2px solid var(--rule);max-width:1052px;padding-left:0;padding-right:0;margin-top:40px}
+main.wrap{padding-top:44px;padding-bottom:90px;border-top:2px solid var(--rule);max-width:1052px;padding-left:0;padding-right:0;margin-top:50px}
 @media (max-width:1100px){main.wrap{margin-left:24px;margin-right:24px}}
 .view{display:none}.view.shown{display:block}
-h1{font-family:var(--sans);font-weight:300;font-size:52px;line-height:1.15;margin:40px 0 22px;color:var(--text)}
+h1{font-family:var(--sans);font-weight:300;font-size:48px;line-height:1.15;letter-spacing:.02em;margin:78px 0 18px;color:var(--text)}
+.view>h1:first-child{margin-top:40px}
 h1.page-title{font-size:36px;margin:30px 0 12px;color:var(--title)}
 h2{font-family:var(--sans);font-weight:300;font-size:34px;margin:40px 0 16px}
 h3{font-family:var(--sans);font-weight:600;font-size:18px;margin:0 0 14px;color:var(--strong)}
 p{margin:0 0 1em}
 ul{padding-left:42px}
-li{margin-bottom:6px}
+li{margin-bottom:8px}
 hr.rule{border:0;border-top:2px solid var(--rule);margin:40px 0}
 .banner{margin:30px 0 10px}
 .banner img{width:100%;height:auto}
@@ -74,7 +75,7 @@ hr.rule{border:0;border-top:2px solid var(--rule);margin:40px 0}
 .related a+a{margin-top:6px}
 .ph{background:var(--ph);color:var(--ph-text);font-size:13px;display:flex;align-items:center;justify-content:center;text-align:center;padding:16px;aspect-ratio:4/3}
 #v-publications .prose{font-size:18px;padding-bottom:30px;border-bottom:2px solid var(--rule);margin-bottom:36px}
-.pubs{list-style:none;padding:0;margin:0;font-size:18px;line-height:1.3;color:var(--teal)}
+.pubs{list-style:none;padding:0;margin:0;font-size:18px;line-height:1.2;color:var(--teal)}
 .pubs li{padding:0 0 26px;margin:0}
 .pubs .t{display:block}
 .pubs a{color:var(--teal)}
@@ -94,11 +95,11 @@ hr.rule{border:0;border-top:2px solid var(--rule);margin:40px 0}
 .board{margin:0}
 .board img{width:100%;height:auto}
 @media (max-width:760px){.talk{grid-template-columns:1fr;gap:20px}}
-.contact-intro{font-size:18px;margin:28px 0 40px}
+.contact-intro{margin:28px 0 40px}
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
 .map{aspect-ratio:835/515;background:var(--ph)}
 .map iframe{display:block;width:100%;height:100%;border:0;filter:grayscale(.85) contrast(.95) brightness(1.03)}
-.contact-card{border-top:2px solid var(--rule);border-bottom:2px solid var(--rule);padding:30px 0 40px;font-size:18px}
+.contact-card{border-top:2px solid var(--rule);border-bottom:2px solid var(--rule);padding:30px 0 40px}
 .contact-card h2{margin:0 0 18px;font-size:36px;color:var(--title)}
 .contact-card p:last-child{margin-bottom:0}
 .join{margin-top:56px}
